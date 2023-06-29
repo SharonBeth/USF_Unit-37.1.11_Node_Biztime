@@ -8,6 +8,7 @@ console.log("get")
 router.get("/", function (req, res, next) {
     try {
         console.log("router.get")
+        return res.send("testing")
     } catch (err) {
         return next(err)
     }

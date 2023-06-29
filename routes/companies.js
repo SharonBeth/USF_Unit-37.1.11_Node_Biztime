@@ -3,7 +3,7 @@ const ExpressError = require("../expressError")
 const router = express.Router();
 const db = require("../db");
 
-router.get('/', (req, res, next) => {
+router.get('/companies', (req, res, next) => {
     const results = db.query(`SELECT * FROM companies`);
     return res.json(results.rows);
 })
