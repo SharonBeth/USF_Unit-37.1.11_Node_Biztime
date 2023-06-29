@@ -1,17 +1,25 @@
 /** BizTime express application. */
 
-
+//Set-up for outside files & dependencies
 const express = require("express");
 
 const app = express();
 const ExpressError = require("./expressError")
 
+//This parses the information coming in into the form of a JSON.
+
 app.use(express.json());
 
+//This allows access to the routes set up in routes folder
 
+const routingC = require("./routes/companies");
+app.use("/companies", routingC)
+
+const routingI = require("./routes/invoices");
+app.use("/invoices", routingI);
 /** 404 handler */
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   const err = new ExpressError("Not Found", 404);
   return next(err);
 });
