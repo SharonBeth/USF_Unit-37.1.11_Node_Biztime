@@ -1,9 +1,7 @@
 /** Server startup for BizTime. */
 
-const express = require("express");
-const app = express();
+const app = require("./app.js");
 // const app = require("./app");
-const db = require("./db");
 
 app.listen(3000, function () {
   console.log("Listening on 3000");

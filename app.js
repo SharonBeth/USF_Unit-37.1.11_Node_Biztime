@@ -13,6 +13,8 @@ app.use(express.json());
 //This allows access to the routes set up in routes folder
 
 const routingC = require("./routes/companies");
+//The below code is the initial route name, any routes inside companies.js will be in addition to 
+//    "/companies"
 app.use("/companies", routingC)
 
 const routingI = require("./routes/invoices");
